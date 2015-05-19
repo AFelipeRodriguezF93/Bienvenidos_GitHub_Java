@@ -36,6 +36,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         ENombre = new javax.swing.JTextField();
         LBienvenido = new javax.swing.JLabel();
         LNombreBienvenido = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -63,6 +64,8 @@ public class FramePrincipal extends javax.swing.JFrame {
         LNombreBienvenido.setText("Tu");
         LNombreBienvenido.setAlignmentY(0.0F);
 
+        jLabel1.setText("Andres");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -77,6 +80,10 @@ public class FramePrincipal extends javax.swing.JFrame {
                     .addComponent(ENombre))
                 .addGap(18, 18, 18)
                 .addComponent(BSaludo))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(141, 141, 141)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -90,7 +97,9 @@ public class FramePrincipal extends javax.swing.JFrame {
                 .addComponent(LBienvenido)
                 .addGap(28, 28, 28)
                 .addComponent(LNombreBienvenido)
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(40, 40, 40))
         );
 
         LNombre.getAccessibleContext().setAccessibleName("LNombre");
@@ -156,5 +165,6 @@ public class FramePrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel LBienvenido;
     private javax.swing.JLabel LNombre;
     private javax.swing.JLabel LNombreBienvenido;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
