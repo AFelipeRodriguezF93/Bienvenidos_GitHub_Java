@@ -5,6 +5,8 @@
  */
 package bienvenidos_github_java;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author AndresFelipe
@@ -27,69 +29,87 @@ public class FramePrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        LNombre = new javax.swing.JLabel();
+        BSaludo = new javax.swing.JButton();
+        ENombre = new javax.swing.JTextField();
+        LBienvenido = new javax.swing.JLabel();
+        LNombreBienvenido = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
-        jLabel1.setText("Nombre:");
+        LNombre.setText("Nombre:");
 
-        jButton1.setText("Saludo");
+        BSaludo.setText("Saludo");
+        BSaludo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BSaludoMouseClicked(evt);
+            }
+        });
 
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(51, 204, 0));
-        jLabel2.setText("Bienvenido");
+        LBienvenido.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
+        LBienvenido.setForeground(new java.awt.Color(51, 204, 0));
+        LBienvenido.setText("Bienvenido");
 
-        jLabel3.setText("Tu");
+        LNombreBienvenido.setText("Tu");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jLabel2)
+                .addComponent(LBienvenido)
                 .addGap(112, 112, 112))
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1)
+                        .addComponent(LNombre)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ENombre, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(189, 189, 189)
-                        .addComponent(jLabel3)))
-                .addContainerGap())
+                        .addComponent(BSaludo)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(LNombreBienvenido)
+                        .addGap(192, 192, 192))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jButton1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(LNombre)
+                    .addComponent(BSaludo)
+                    .addComponent(ENombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(51, 51, 51)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel3)
-                .addContainerGap(120, Short.MAX_VALUE))
+                .addComponent(LBienvenido)
+                .addGap(38, 38, 38)
+                .addComponent(LNombreBienvenido)
+                .addContainerGap(100, Short.MAX_VALUE))
         );
 
-        jLabel1.getAccessibleContext().setAccessibleName("LNombre");
-        jButton1.getAccessibleContext().setAccessibleName("BSaludo");
-        jTextField1.getAccessibleContext().setAccessibleName("ENombre");
-        jLabel2.getAccessibleContext().setAccessibleName("LBienvenido");
-        jLabel3.getAccessibleContext().setAccessibleName("LNombreBienvenido");
-        jLabel3.getAccessibleContext().setAccessibleDescription("");
+        LNombre.getAccessibleContext().setAccessibleName("LNombre");
+        BSaludo.getAccessibleContext().setAccessibleName("BSaludo");
+        ENombre.getAccessibleContext().setAccessibleName("ENombre");
+        LBienvenido.getAccessibleContext().setAccessibleName("LBienvenido");
+        LNombreBienvenido.getAccessibleContext().setAccessibleName("LNombreBienvenido");
+        LNombreBienvenido.getAccessibleContext().setAccessibleDescription("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BSaludoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BSaludoMouseClicked
+        
+    }//GEN-LAST:event_BSaludoMouseClicked
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        JOptionPane.showMessageDialog(this, "Iniciando la aplicación");
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -121,16 +141,16 @@ public class FramePrincipal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FramePrincipal().setVisible(true);
+                new FramePrincipal().setVisible(true);                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton BSaludo;
+    private javax.swing.JTextField ENombre;
+    private javax.swing.JLabel LBienvenido;
+    private javax.swing.JLabel LNombre;
+    private javax.swing.JLabel LNombreBienvenido;
     // End of variables declaration//GEN-END:variables
 }
