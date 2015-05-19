@@ -18,6 +18,8 @@ public class FramePrincipal extends javax.swing.JFrame {
      */
     public FramePrincipal() {
         initComponents();
+        LBienvenido.setVisible(false);
+        LNombreBienvenido.setVisible(false);
     }
 
     /**
@@ -53,30 +55,28 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         LBienvenido.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
         LBienvenido.setForeground(new java.awt.Color(51, 204, 0));
-        LBienvenido.setText("Bienvenido");
+        LBienvenido.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LBienvenido.setText("Bienvenid@");
 
+        LNombreBienvenido.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        LNombreBienvenido.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LNombreBienvenido.setText("Tu");
+        LNombreBienvenido.setAlignmentY(0.0F);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(LBienvenido)
-                .addGap(112, 112, 112))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(LNombre)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(LNombre)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(ENombre, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BSaludo)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(LNombreBienvenido)
-                        .addGap(192, 192, 192))))
+                    .addComponent(LBienvenido, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
+                    .addComponent(LNombreBienvenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ENombre))
+                .addGap(18, 18, 18)
+                .addComponent(BSaludo))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -88,9 +88,9 @@ public class FramePrincipal extends javax.swing.JFrame {
                     .addComponent(ENombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(51, 51, 51)
                 .addComponent(LBienvenido)
-                .addGap(38, 38, 38)
+                .addGap(28, 28, 28)
                 .addComponent(LNombreBienvenido)
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
 
         LNombre.getAccessibleContext().setAccessibleName("LNombre");
@@ -104,7 +104,11 @@ public class FramePrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BSaludoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BSaludoMouseClicked
-        
+        LBienvenido.setVisible(true);
+        LNombreBienvenido.setVisible(true);
+        String SaludoBienvenida = ENombre.getText();
+        LNombreBienvenido.setText(SaludoBienvenida);
+        ENombre.setText("");
     }//GEN-LAST:event_BSaludoMouseClicked
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
